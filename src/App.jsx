@@ -3,6 +3,7 @@ import './App.css'
 import { Route, Routes } from 'react-router'
 import { CheckoutPage } from './pages/CheckoutPage'
 import { OrdersPage } from './pages/OrdersPage'
+import { TrackingPage } from './pages/TrackingPage'
 
 function App() {
 
