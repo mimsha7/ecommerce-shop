@@ -1,10 +1,12 @@
 import './HomePage.css'
-import { Header } from '../components/Header'  
+import { Header } from '../components/Header'
+import  checkmarkIcon  from '../assets/images/icons/checkmark.png'    
 
 export const HomePage = () => {
     return (
     <>
     <title>Home</title>
+    <link rel="icon" href="home-favicon.png" />
     <Header />
     <div className="home-page">
         <div className="products-grid">
@@ -48,7 +50,7 @@ export const HomePage = () => {
             <div className="product-spacer"></div>
 
             <div className="added-to-cart">
-                <img src="images/icons/checkmark.png" />
+                <img src={checkmarkIcon} />
                 Added
             </div>
 
@@ -97,7 +99,7 @@ export const HomePage = () => {
             <div className="product-spacer"></div>
 
             <div className="added-to-cart">
-                <img src="images/icons/checkmark.png" />
+                <img src={checkmarkIcon} />
                 Added
             </div>
 
@@ -146,7 +148,7 @@ export const HomePage = () => {
             <div className="product-spacer"></div>
 
             <div className="added-to-cart">
-                <img src="images/icons/checkmark.png" />
+                <img src={checkmarkIcon} />
                 Added
             </div>
 

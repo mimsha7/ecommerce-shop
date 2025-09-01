@@ -1,11 +1,13 @@
 import './OrdersPage.css'
 import { Header } from '../components/Header'
+import { Link } from 'react-router';
+import  buyIcon  from '../assets/images/icons/buy-again.png'
 
 export const OrdersPage = () => {
   return (
-    <>
-
+  <>
     <title>Orders</title>
+    <link rel="icon" href="orders-favicon.png" />
     <Header />
 
       <div class="orders-page">
@@ -45,18 +47,18 @@ export const OrdersPage = () => {
                 <button class="buy-again-button button-primary">
                   <img
                     class="buy-again-icon"
-                    src="images/icons/buy-again.png"
+                    src={buyIcon}
                   />
                   <span class="buy-again-message">Add to Cart</span>
                 </button>
               </div>
 
               <div class="product-actions">
-                <a href="/tracking">
+                <Link to="/tracking">
                   <button class="track-package-button button-secondary">
                     Track package
                   </button>
-                </a>
+                </Link>
               </div>
 
               <div class="product-image-container">
@@ -72,18 +74,18 @@ export const OrdersPage = () => {
                 <button class="buy-again-button button-primary">
                   <img
                     class="buy-again-icon"
-                    src="images/icons/buy-again.png"
+                    src={buyIcon}
                   />
                   <span class="buy-again-message">Add to Cart</span>
                 </button>
               </div>
 
               <div class="product-actions">
-                <a href="/tracking">
+                <Link to="/tracking">
                   <button class="track-package-button button-secondary">
                     Track package
                   </button>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -119,7 +121,7 @@ export const OrdersPage = () => {
                 <button class="buy-again-button button-primary">
                   <img
                     class="buy-again-icon"
-                    src="images/icons/buy-again.png"
+                    src={buyIcon}
                   />
                   <span class="buy-again-message">Add to Cart</span>
                 </button>
