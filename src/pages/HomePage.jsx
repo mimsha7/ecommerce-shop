@@ -1,17 +1,19 @@
+import axios from "axios";
 import "./HomePage.css";
 import { Header } from "../components/Header";
 import checkmarkIcon from "../assets/images/icons/checkmark.png";
-import { products } from "../data/products";
-
+import { useEffect, useState } from "react";
 
 export const HomePage = () => {
-  fetch("http://localhost:3000/api/products")
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    axios("http://localhost:3000/api/products")
     .then((res) => {
-      console.log(res);
-      return res.json();
-    }).then((data) => {
-      console.log(data);
+      setProducts(res.data);
     });
+  }, []);
+
   return (
     <>
       <title>Ecommerce Shop</title>
@@ -23,10 +25,7 @@ export const HomePage = () => {
             return (
               <div key={product.id} className="product-container">
                 <div className="product-image-container">
-                  <img
-                    className="product-image"
-                    src={product.image}
-                  />
+                  <img className="product-image" src={product.image} />
                 </div>
 
                 <div className="product-name limit-text-to-2-lines">
@@ -36,12 +35,18 @@ export const HomePage = () => {
                 <div className="product-rating-container">
                   <img
                     className="product-rating-stars"
-                    src={`images/ratings/rating-${product.rating.stars *10}.png`}
+                    src={`images/ratings/rating-${
+                      product.rating.stars * 10
+                    }.png`}
                   />
-                  <div className="product-rating-count link-primary">{product.rating.count}</div>
+                  <div className="product-rating-count link-primary">
+                    {product.rating.count}
+                  </div>
                 </div>
 
-                <div className="product-price">${(product.priceCents / 100).toFixed(2)}</div>
+                <div className="product-price">
+                  ${(product.priceCents / 100).toFixed(2)}
+                </div>
 
                 <div className="product-quantity-container">
                   <select>
@@ -70,7 +75,8 @@ export const HomePage = () => {
                 </button>
               </div>
             );
-          })};
+          })}
+          ;
         </div>
       </div>
     </>
