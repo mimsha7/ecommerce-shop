@@ -1,5 +1,5 @@
 import { Header } from "../components/Header";
-import notFoundImage from "../../public/not-found.png";
+import notFoundImage from "../assets/not-found.png";
 
 export const NotFound = () => {
   return (

@@ -3,7 +3,15 @@ import { Header } from "../components/Header";
 import checkmarkIcon from "../assets/images/icons/checkmark.png";
 import { products } from "../data/products";
 
+
 export const HomePage = () => {
+  fetch("http://localhost:3000/api/products")
+    .then((res) => {
+      console.log(res);
+      return res.json();
+    }).then((data) => {
+      console.log(data);
+    });
   return (
     <>
       <title>Ecommerce Shop</title>
