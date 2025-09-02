@@ -9,12 +9,12 @@ export const HomePage = () => {
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    axios("http://localhost:3000/api/products")
+    axios("/api/products")
     .then((res) => {
       setProducts(res.data);
     });
 
-    axios.get("http://localhost:3000/api/cart-items")
+    axios.get("/api/cart-items")
     .then((res) => {
     setCart(res.data);
     });
