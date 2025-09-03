@@ -5,6 +5,7 @@ import  checkoutLockIcon  from '../../assets/images/icons/checkout-lock-icon.png
 import './CheckoutHeader.css'
 
 export const CheckoutHeader = () => {
+
   return (
     <div className="checkout-header">
       <div className="header-content">
