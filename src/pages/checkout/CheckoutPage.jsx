@@ -10,24 +10,18 @@ export const CheckoutPage = ({ cart }) => {
   const [deliveryOptions, setDeliveryOptions] = useState([]);
   const [paymentSummary, setPaymentSummary] = useState(null);
 
-  useEffect(() => {
-    axios
-      .get("/api/delivery-options?expand=estimatedDeliveryTime")
-      .then((res) => {
-        setDeliveryOptions(res.data);
-      })
-      .catch((error) => {
-        console.error("Error loading delivery options:", error);
-      });
+  useEffect(() => { 
+    const getDeliveryData = async () => {
+     const res = await axios.get("/api/delivery-options?expand=estimatedDeliveryTime")
+      setDeliveryOptions(res.data);
+    } 
+    getDeliveryData();
 
-    axios
-      .get("/api/payment-summary")
-      .then((res) => {
-        setPaymentSummary(res.data);
-      })
-      .catch((error) => {
-        console.error("Error loading payment summary:", error);
-      });
+    const getPaymentData = async () => {
+      const res = await axios.get("/api/payment-summary")
+      setPaymentSummary(res.data);
+    } 
+    getPaymentData();
   }, []);
 
   return (
