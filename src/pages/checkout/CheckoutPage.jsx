@@ -34,7 +34,7 @@ export const CheckoutPage = ({ cart, addCart }) => {
         <div className="checkout-grid">
           <OrderSummary deliveryOptions={deliveryOptions} cart={cart} addCart={addCart} />
 
-          <PaymentSummary paymentSummary={paymentSummary} />
+          <PaymentSummary paymentSummary={paymentSummary} addCart={addCart} />
         </div>
       </div>
     </>
