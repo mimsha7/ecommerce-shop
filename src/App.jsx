@@ -7,6 +7,7 @@ import { TrackingPage } from "./pages/tracking/TrackingPage";
 import { NotFound } from "./pages/NotFound";
 import { useEffect, useState } from "react";
 import axios from "axios";
+window.axios = axios;
 
 function App() {
   const [cart, setCart] = useState([]);
