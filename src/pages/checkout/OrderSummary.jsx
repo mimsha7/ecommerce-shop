@@ -28,7 +28,7 @@ export function OrderSummary({ deliveryOptions, cart, addCart }) {
                 )}
               </div>
               <div className="cart-item-details-grid">
-                <CartItemDetails cartItem={cartItem} />
+                <CartItemDetails cartItem={cartItem} addCart={addCart} />
                 <DeliveryOptions deliveryOptions={deliveryOptions} cartItem={cartItem} addCart={addCart} />
               </div>
             </div>
