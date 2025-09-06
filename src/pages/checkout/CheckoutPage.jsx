@@ -6,7 +6,7 @@ import axios from "axios";
 import { OrderSummary } from "./OrderSummary";
 import { PaymentSummary } from "./PaymentSummary";
 
-export const CheckoutPage = ({ cart }) => {
+export const CheckoutPage = ({ cart, addCart }) => {
   const [deliveryOptions, setDeliveryOptions] = useState([]);
   const [paymentSummary, setPaymentSummary] = useState(null);
 
@@ -22,7 +22,7 @@ export const CheckoutPage = ({ cart }) => {
       setPaymentSummary(res.data);
     } 
     getPaymentData();
-  }, []);
+  }, [cart]);
 
   return (
     <>
@@ -34,7 +34,7 @@ export const CheckoutPage = ({ cart }) => {
         <div className="page-title">Review your order</div>
 
         <div className="checkout-grid">
-          <OrderSummary deliveryOptions={deliveryOptions} cart={cart} />
+          <OrderSummary deliveryOptions={deliveryOptions} cart={cart} addCart={addCart} />
 
           <PaymentSummary paymentSummary={paymentSummary} />
         </div>
